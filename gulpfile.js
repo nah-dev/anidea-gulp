@@ -1,7 +1,7 @@
 const gulp  = require('gulp');
 const $     = require("gulp-load-plugins")({
   pattern: ["*"],
-  scope: ["devDependencies"]
+  scope: ["dependencies", "devDependencies"]
 });
 
 // $.spawn     = require('child_process').spawn;
