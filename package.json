@@ -1,6 +1,6 @@
 {
   "name": "anidea.gulp",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
   "keywords": [],
   "author": "Mark Whitcher <mark@anidea.co>",
   "license": "UNLICENSED",
-  "devDependencies": {
+  "dependencies": {
     "@babel/core": "^7.4.5",
     "@babel/plugin-transform-react-jsx": "^7.3.0",
     "@babel/polyfill": "^7.4.4",
