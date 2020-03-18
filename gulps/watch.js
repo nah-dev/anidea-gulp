@@ -26,14 +26,13 @@ function initBrowserSync() {
 }
 
 function initiateWatch() {
-  gulp.watch(['./source/**/*.+(sass|scss)','!source/**/*.pug.sass'], sass);
+  gulp.watch(['./source/**/*.+(sass|scss)','!source/**/*.pug.sass'], gulp.series(sass, manifests));
   gulp.watch('./source/**/*.+(pug|pug.sass)', pug);
-  gulp.watch("./source/**/*.coffee", coffee);
+  gulp.watch("./source/**/*.coffee", gulp.series(coffee, manifests));
   
   // .pre.js files in build are meant to be included in other js files
   // in source.
-  gulp.watch(["./source/**/*.js","./build/**/*.pre.js"], scripts);
-  gulp.watch("./build/manifests/*.json", manifests);
+  gulp.watch(["./source/**/*.js","./build/**/*.pre.js"], gulp.series(scripts, manifests));
   gulp.watch(['./build/**/*.+(html|js)'])
       .on('change', $.reload);
 
