@@ -41,3 +41,20 @@ All it would take is a single--
 in the front gulpfile.js and it would just work.  And then this
 would make changes a bigger deal (which would decrease the liklihood
 that the commits would get too cumbersome and messy).
+
+
+USAGE
+=====
+Simply add anidea.gulp to your package.json file.  Create a gulpfile.js
+that has the following:
+| module.exports = require("anidea.gulp");
+This will set everything up.  Then launch it with:
+| yarn run gulp watch
+
+This setup creates versioned minified copies of coffee, sass, and js
+files.  If the "filename.min.css" is referenced in a pug file, it
+will be replaced with the versioned filename "filename-50906d38a5.min.css".
+
+The caveat with this is that if the css file changes, it will have a 
+different filename.  You'll need to re-save the pug file where it is 
+referenced to pick up the new filename.
