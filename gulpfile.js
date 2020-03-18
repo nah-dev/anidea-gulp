@@ -7,7 +7,6 @@ const html        = require("./gulps/html");
 const manifests   = require("./gulps/manifests");
 const nah         = require("./gulps/nah");
 const pug         = require("./gulps/pug");
-const replaceRefs = require("./gulps/replace_refs");
 const ruby        = require("./gulps/ruby");
 const sass        = require("./gulps/sass");
 const scripts     = require("./gulps/scripts");
@@ -31,13 +30,14 @@ gulp.task(
 
 //################################################################
 
-exports.watch   = watch;
-exports.sass    = sass;
-exports.coffee  = coffee;
-exports.scripts = scripts;
-exports.pug     = pug;
-exports.nah     = nah;
-exports.haml    = haml;
-exports.ruby    = ruby;
-exports.html    = html;
+exports.watch     = watch;
+exports.sass      = gulp.series(sass, manifests);
+exports.coffee    = gulp.series(coffee, manifests);
+exports.scripts   = gulp.series(scripts, manifests);
+exports.pug       = pug;
+exports.nah       = nah;
+exports.haml      = haml;
+exports.ruby      = ruby;
+exports.html      = html;
+exports.manifests = manifests;
 
