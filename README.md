@@ -1,6 +1,13 @@
 Static Web Development with Gulp
 ================================
 
+Obviously, this readme file will need to be changed. This was kind of
+my brainstorm area as I was developing the files. Will update this
+file later so it reads properly for anyone not familiar with the
+project. Skip to the end to see how to use this gulpfile setup.
+
+----------------------
+
 This library is simply the gulp setup used by anidea for development. It
 is mainly used for static web development (html, css, js), but it is also
 used as the build method for creating the ruby code for Net-at-hand plugins
@@ -47,9 +54,16 @@ USAGE
 =====
 Simply add anidea.gulp to your package.json file.  Create a gulpfile.js
 that has the following:
-| module.exports = require("anidea.gulp");
+
+```javascript
+module.exports = require("anidea.gulp");
+```
+
 This will set everything up.  Then launch it with:
-| yarn run gulp watch
+
+```
+yarn run gulp watch
+```
 
 This setup creates versioned minified copies of coffee, sass, and js
 files.  If the "filename.min.css" is referenced in a pug file, it
