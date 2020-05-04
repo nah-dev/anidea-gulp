@@ -34,7 +34,6 @@ exports.sass      = gulp.series(sass, manifests);
 exports.coffee    = gulp.series(coffee, manifests);
 exports.scripts   = gulp.series(scripts, manifests);
 exports.pug       = pug;
-exports.nah       = nah;
 exports.haml      = haml;
 exports.ruby      = ruby;
 exports.html      = html;
