@@ -11,6 +11,6 @@ module.exports = function pug() {
       console.log(err.toString());
       this.emit('end');
     })
-    .pipe($.revReplace({manifest: gulp.src("build/manifest.json")}))
+    .pipe($.revReplace({manifest: gulp.src("build/manifest.json", {allowEmpty: true})}))
     .pipe(gulp.dest('build'));
 };
