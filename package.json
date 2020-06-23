@@ -1,6 +1,6 @@
 {
   "name": "anidea.gulp",
-  "version": "0.3.3",
+  "version": "0.4.0",
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
@@ -38,6 +38,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
+    "gulp-to-ico": "^1.0.0",
     "jstransformer-clean-css": "^2.1.0",
     "jstransformer-coffee-script": "^1.1.1",
     "jstransformer-haml": "^0.1.0",

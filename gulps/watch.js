@@ -10,6 +10,7 @@ const coffee    = require("./coffee");
 const scripts   = require("./scripts");
 const manifests = require("./manifests");
 const pug       = require("./pug");
+const ico       = require("./ico");
 
 //################################################################
 
@@ -29,6 +30,7 @@ function initiateWatch() {
   gulp.watch(['./source/**/*.+(sass|scss)','!source/**/*.pug.sass'], gulp.series(sass, manifests));
   gulp.watch('./source/**/*.+(pug|pug.sass)', pug);
   gulp.watch("./source/**/*.coffee", gulp.series(coffee, manifests));
+  gulp.watch("./source/**/favicon.+(jpg|png|gif)", ico);
   
   // .pre.js files in build are meant to be included in other js files
   // in source.
