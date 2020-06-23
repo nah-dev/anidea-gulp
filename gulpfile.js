@@ -10,6 +10,7 @@ const ruby        = require("./gulps/ruby");
 const sass        = require("./gulps/sass");
 const scripts     = require("./gulps/scripts");
 const watch       = require("./gulps/watch");
+const ico         = require("./gulps/ico")
 
 //################################################################
 
@@ -38,4 +39,5 @@ exports.haml      = haml;
 exports.ruby      = ruby;
 exports.html      = html;
 exports.manifests = manifests;
+exports.ico       = ico;
 
