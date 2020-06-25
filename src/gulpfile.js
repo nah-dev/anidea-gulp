@@ -1,16 +1,16 @@
 const gulp = require('gulp');
-const $    = require("./gulps/setup");
+const $    = require("./setup");
 
-const coffee      = require("./gulps/coffee");
-const haml        = require("./gulps/haml");
-const html        = require("./gulps/html");
-const manifests   = require("./gulps/manifests");
-const pug         = require("./gulps/pug");
-const ruby        = require("./gulps/ruby");
-const sass        = require("./gulps/sass");
-const scripts     = require("./gulps/scripts");
-const watch       = require("./gulps/watch");
-const ico         = require("./gulps/ico")
+const coffee      = require("./coffee");
+const haml        = require("./haml");
+const html        = require("./html");
+const manifests   = require("./manifests");
+const pug         = require("./pug");
+const ruby        = require("./ruby");
+const sass        = require("./sass");
+const scripts     = require("./scripts");
+const watch       = require("./watch");
+const ico         = require("./ico")
 
 //################################################################
 

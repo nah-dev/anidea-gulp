@@ -2,14 +2,14 @@
   "name": "anidea.gulp",
   "version": "0.5.0",
   "description": "",
-  "main": "gulpfile.js",
+  "main": "src/gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "gulp watch"
   },
   "keywords": [],
-  "author": "Mark Whitcher <mark@anidea.co>",
-  "license": "UNLICENSED",
+  "author": "Mark Whitcher (https://twitter.com/vintagenib)",
+  "license": "MIT",
   "dependencies": {
     "@babel/core": "^7.4.5",
     "@babel/plugin-transform-react-jsx": "^7.3.0",
@@ -50,5 +50,5 @@
     "rev-del": "^2.0.0",
     "sass-inline-svg": "^1.2.3"
   },
-  "repository": "ssh://anidea.git/repos/anidea/anidea.gulp.git"
+  "repository": "nahgit/anidea.gulp"
 }
