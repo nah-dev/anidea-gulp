@@ -11,10 +11,12 @@ module.exports = function scripts() {
     .pipe($.include())
     .pipe($.babel({presets: ['@babel/env'], plugins: ['@babel/transform-react-jsx']}))
     .pipe(gulp.dest('build'))
+    .pipe($.touchFd())
     .pipe($.uglify())
     .pipe($.rename({suffix: '.min'}))
     .pipe($.rev())
     .pipe(gulp.dest('build'))
+    .pipe($.touchFd())
     .pipe($.rev.manifest("manifest.scripts.json"))
     .pipe($.rev.del({dest:'build'}))
     .pipe(gulp.dest('build'));
