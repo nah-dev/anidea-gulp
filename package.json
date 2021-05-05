@@ -4,7 +4,6 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "gulp watch"
   },
   "keywords": [],
@@ -51,5 +50,5 @@
   "optionalDependencies": {
     "fsevents": "^2.1.2"
   },
-  "repository": "nahgit/anidea.gulp"
+  "repository": "https://github.com/nah-dev/anidea-gulp"
 }

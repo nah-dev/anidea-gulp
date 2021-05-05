@@ -1,74 +1,39 @@
 Static Web Development with Gulp
 ================================
 
-Obviously, this readme file will need to be changed. This was kind of
-my brainstorm area as I was developing the files. Will update this
-file later so it reads properly for anyone not familiar with the
-project. Skip to the end to see how to use this gulpfile setup.
+This library is simply the gulp setup used by [an.idea](http://anidea.co) 
+for development. It is mainly used for static web development (html, css, js)
+but is also used internally to combine ruby code into a single file for 
+[Net-at-hand](https://net-at-hand.com) plugins.
 
-----------------------
+The following preprocessors can be used with a live preview of each:
+* [SASS](https://sass-lang.com/documentation) for generating CSS
+* [Pug](https://pugjs.org/api/getting-started.html) for generating HTML
+* [Coffeescript](http://coffeescript.org) for generating javascript
 
-This library is simply the gulp setup used by anidea for development. It
-is mainly used for static web development (html, css, js), but it is also
-used as the build method for creating the ruby code for Net-at-hand plugins
-(mainly using the include function from gulp-include).
+In addition to these, javascript files are run through babel to transform
+JSX code.
 
-It is meant to be pulled in as a subtree into whatever project you are
-working on.  You'll then use the gulpfile by specifying:
+All of the file types can be combined using [gulp-include](https://github.com/wiledal/gulp-include).
+The gulpfile is set up to skip over files that start with an underscore
+character (_) to mimic how partials work in a rails application.  This lets
+you separate functionality into separate files but then combine them to a single
+file using
 
-| yarn run gulp --gulpfile anidea.gulp/gulpfile.js [action]
+    //= require "./path/to/file.js"
 
-You can put this into your tasks file however needed to make it easy
-to call up.
+Usage
+-----
+To use just add it as a git package to your package.json file (we're not making
+it available as an npm package).  Then create a Gulpfile.js file that includes:
 
---------------------------
+    module.exports = require("anidea-gulp");
 
-The file sample.package.json is just for reference so you can make sure
-to include all the needed packages needed for anidea.gulp to process
-the files.
+Make sure there are a ./source and ./build folder; then in a terminal you can
+run the preview with
 
+    yarn run gulp watch
 
-**Use this as a subtree... or maybe not**
------------------------------------------
-
-This repository is meant to be used as a subtree rather than a node
-package.  A node package would make it easier to include in the 
-proejct, because we could just add it to the package.json file
-and all the necessary node modules would be required automatically.
-
-But pulling it in as a subtree makes it easier for us to make changes.
-This will let us process changes within a project and then just push
-them to the subtree's repository.
-
-BUT, I'm almost convincing myself that the node module is the way to go.
-All it would take is a single--
-
-| require "anidea.gulp";
-
-in the front gulpfile.js and it would just work.  And then this
-would make changes a bigger deal (which would decrease the liklihood
-that the commits would get too cumbersome and messy).
-
-
-USAGE
-=====
-Simply add anidea.gulp to your package.json file.  Create a gulpfile.js
-that has the following:
-
-```javascript
-module.exports = require("anidea.gulp");
-```
-
-This will set everything up.  Then launch it with:
-
-```
-yarn run gulp watch
-```
-
-This setup creates versioned minified copies of coffee, sass, and js
-files.  If the "filename.min.css" is referenced in a pug file, it
-will be replaced with the versioned filename "filename-50906d38a5.min.css".
-
-The caveat with this is that if the css file changes, it will have a 
-different filename.  You'll need to re-save the pug file where it is 
-referenced to pick up the new filename.
+This should open up a new browser window pointed to http://localhost:8080 showing
+the current folder structure in your build folder.
+    
