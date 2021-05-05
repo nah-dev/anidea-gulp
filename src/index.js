@@ -11,6 +11,7 @@ const sass        = require("./sass");
 const scripts     = require("./scripts");
 const watch       = require("./watch");
 const ico         = require("./ico")
+const setup       = require("./setup");
 
 //################################################################
 
@@ -40,4 +41,5 @@ exports.ruby      = ruby;
 exports.html      = html;
 exports.manifests = manifests;
 exports.ico       = ico;
+exports.setup     = setup;
 

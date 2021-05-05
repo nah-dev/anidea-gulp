@@ -5,7 +5,7 @@ const $     = require("./setup");
 
 // SASS FILES
 module.exports = function sass() {
-  return gulp.src('source/**/*.+(sass|scss)')
+  var result = gulp.src('source/**/*.+(sass|scss)')
     .pipe($.sass({
       functions: {
         'svg':        $.inliner('./source/', {}),
@@ -17,12 +17,19 @@ module.exports = function sass() {
       this.emit('end');
     })
     .pipe(gulp.dest('build'))
-    .pipe($.cleanCss())
-    .pipe($.rename({suffix: '.min'}))
-    .pipe($.rev())
-    .pipe(gulp.dest('build'))
-    .pipe($.rev.manifest('manifest.sass.json'))
+  
+  if ( !$.config.disableMinify ) {
+    result = result.pipe($.cleanCss())
+      .pipe($.rename({suffix: '.min'}))
+      .pipe($.rev())
+      .pipe(gulp.dest('build'))
+  }
+  if ( !$.config.disableManifest ) {
+    result = result.pipe($.rev.manifest('manifest.sass.json'))
     .pipe($.rev.del({dest:"build"}))
     .pipe(gulp.dest('build'))
-    .pipe($.reload({stream: true}));
+  }
+  
+  result = result.pipe($.reload({stream: true}));
+  return result
 }
