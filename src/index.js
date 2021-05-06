@@ -3,7 +3,7 @@ const $    = require("./setup");
 
 const coffee      = require("./coffee");
 const haml        = require("./haml");
-const html        = require("./html");
+const static      = require("./static");
 const manifests   = require("./manifests");
 const pug         = require("./pug");
 const ruby        = require("./ruby");
@@ -38,7 +38,7 @@ exports.scripts   = gulp.series(scripts, manifests);
 exports.pug       = pug;
 exports.haml      = haml;
 exports.ruby      = ruby;
-exports.html      = html;
+exports.static    = static;
 exports.manifests = manifests;
 exports.ico       = ico;
 exports.setup     = setup;
