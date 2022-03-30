@@ -12,7 +12,7 @@ module.exports = function ruby() {
   return gulp.src("./source/**/*.rb")
     .pipe($.include({
       extensions:     'rb',
-      includePaths:   ["./lib.calm"],
+      includePaths:   ["./lib.calm","./lib"],
       hardFail:       true,
       separateInputs: true
     }))
